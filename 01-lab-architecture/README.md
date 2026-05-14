@@ -4,6 +4,10 @@
 
 The NexaCore SOC homelab runs on a Windows laptop using VirtualBox, with Splunk Enterprise installed directly on the host machine at 192.168.56.1 to act as the central SIEM for the entire environment.
 
+The screenshot below confirms all three virtual machines were running simultaneously during the lab build and testing phase.
+
+![VirtualBox VMs Running](screenshots/infra-01-virtualbox-vms.png)
+
 ## Virtual Machines and Roles
 
 The lab contains three virtual machines. NEXACORE-WS01 is the primary target endpoint representing an employee workstation in a corporate environment. The Domain Controller NexaCore-DC01 manages user authentication and Active Directory services for the NexaCore domain. Kali Linux serves as the attacker machine used to simulate real world attacks against the Windows environment.
