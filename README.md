@@ -111,8 +111,7 @@ Incident Report
 
 | Attack Simulation | MITRE Technique | Detection Method | Status |
 |---|---|---|---|
-| SMB Brute Force | T1110.001 — Password Guessing | Event ID 4625 via Splunk | Completed |
-
+| [SMB Brute Force](./03-attack-simulations/sim-01-smb-bruteforce/README.md) | T1110.001 | Event ID 4625 via Splunk | Completed |
 ---
 
 ## Certifications
