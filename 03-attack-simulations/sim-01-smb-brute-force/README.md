@@ -113,7 +113,7 @@ index=main host=NEXACORE-WS01 EventCode=4625 earliest=-15m
 
 The search returned 8 events corresponding exactly to the 8 password attempts made by the attacker.
 
-Under normal circumstances a user mistyping their password would generate 1 or 2 failures. Seeing 8 rapid failures from the same external IP with no successful login is a clear sign of automated brute force activity and would be escalated immediately in a real SOC.
+Under normal circumstances a user mistyping their password would generate 1 or 2 failures. Seeing 8 rapid failures from the same external IP with no successful login is a clear sign of automated brute force activity and would be escalated immediately in a production SOC environment.
 
 ![4625 Events Detected in Splunk](screenshots/01-brute-force-4625-splunk-detection.png)
 
@@ -128,7 +128,7 @@ Event ID 4625 is the Windows Security log entry for a failed logon attempt. It c
 | Account_Name | administrator | 4625 | The attacker targeted the most privileged account on the machine. Compromising administrator gives full control of the system which is why it is the most common brute force target |
 | Logon_Type | 3 — Network | 4625 | The attempt came remotely over the network. Any repeated Logon_Type 3 failures from an unfamiliar IP should be treated as suspicious and investigated immediately |
 | Failure_Reason | Unknown user name or bad password | 4625 | The same failure reason repeated 8 times from one IP with no success is a textbook brute force pattern. A genuine user mistake rarely exceeds 2 or 3 attempts |
-| Source_Network_Address | 192.168.10.20 | 4625 | This is the Kali Linux attacker IP. In a real investigation this IP would be immediately blocked, traced and checked against threat intelligence feeds |
+| Source_Network_Address | 192.168.10.20 | 4625 | This is the Kali Linux attacker IP. In a production environment this IP would be immediately blocked, traced and checked against threat intelligence feeds |
 | Workstation_Name | KALI | 4625 | The attacker machine name provides a second piece of evidence confirming the source alongside the IP address |
 
 ---
