@@ -1,7 +1,6 @@
 # NexaCore SOC Homelab
 
-![Architecture](01-lab-architecture/screenshots/infra-01-virtualbox-vms.png)
-
+![NexaCore SOC Homelab Architecture](01-lab-architecture/screenshots/nexacore-architecture-diagram.png)
 ![Splunk](https://img.shields.io/badge/Splunk-SIEM-black?style=flat&logo=splunk&logoColor=white)
 ![Windows Server](https://img.shields.io/badge/Windows_Server-2019-0078D6?style=flat&logo=windows&logoColor=white)
 ![Kali Linux](https://img.shields.io/badge/Kali_Linux-Attacker-557C94?style=flat&logo=kalilinux&logoColor=white)
