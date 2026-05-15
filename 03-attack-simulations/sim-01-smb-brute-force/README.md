@@ -17,24 +17,32 @@ SMB (Server Message Block) is the protocol Windows uses to share files and print
 | Sub-technique | T1110.001 — Password Guessing |
 | Reference | https://attack.mitre.org/techniques/T1110/001/ |
 
-## Lab Environment
+## Attack Flow Architecture 
+
+The attack flows entirely over the Internal Network (NexaCoreNet) using the 192.168.10.0/24 range. Kali Linux initiates the brute force against NEXACORE-WS01 over this isolated network. Every failed login attempt on NEXACORE-WS01 is captured by Sysmon and the Windows Security log, collected by the Splunk Universal Forwarder, and shipped over the Host-Only network to Splunk Enterprise on the host laptop at 192.168.56.1 where the analyst investigates.
 
 ```
 Kali Linux (192.168.10.20)
         |
-        | Internal Network — NexaCoreNet
+        | Brute force attack over Internal Network (port 445)
         |
-NEXACORE-WS01 (192.168.10.10)
+        v
+NEXACORE-WS01 (192.168.10.10) -----> NexaCore-DC01 (192.168.10.1)
+        |                              (authentication requests
+        |                               forwarded to DC01)
         |
-        | Host-Only Network
+        | Windows Security and Sysmon logs forwarded
+        | via Splunk Universal Forwarder (port 9997)
         |
-Splunk Enterprise (192.168.56.1) — monitoring all activity
+        v
+Splunk Enterprise (192.168.56.1) — centralized log monitoring
 ```
 
 | Role | Machine | IP Address |
 |---|---|---|
 | Attacker | Kali Linux | 192.168.10.20 |
 | Target | NEXACORE-WS01 | 192.168.10.10 |
+| Domain Controller | NexaCore-DC01 | 192.168.10.1 |
 | SIEM | Splunk Enterprise | 192.168.56.1 |
 
 ## Tools Used
