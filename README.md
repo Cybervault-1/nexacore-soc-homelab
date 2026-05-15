@@ -28,9 +28,20 @@ The NexaCore SOC Homelab is a fully functional security operations environment b
 
 ## Attack and Detection Coverage
 
-| Attack Simulation | Detection Method | Status |
+
+| Attack Simulation | Detection Method | Write-up |
 |---|---|---|
-| SMB Brute Force | Event ID 4625 via Splunk | Completed |
+| SMB Brute Force | Event ID 4625 via Splunk | [View Write-up](03-attack-simulations/sim-01-smb-brute-force/README.md) |
+
+## Lab Documentation
+
+| Section | Description | Link |
+|---|---|---|
+| Lab Architecture | Network design, VM roles and IP addressing | [View](01-lab-architecture/README.md) |
+| Infrastructure | Host specs, VM configuration, Sysmon and Splunk setup | [View](02-infrastructure/README.md) |
+| Attack Simulations | Simulated attacks with full evidence chain | [View](03-attack-simulations/sim-01-smb-brute-force/README.md) |
+| Detections | SPL queries and detection logic | [View](04-detections/detection-01-brute-force/README.md) |
+| Incident Reports | Full IR reports for each simulated attack | [View](05-incident-reports/IR-001-smb-brute-force/README.md) |
 
 ## Certifications
 
