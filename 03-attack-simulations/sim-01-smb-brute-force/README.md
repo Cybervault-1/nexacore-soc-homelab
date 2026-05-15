@@ -114,14 +114,14 @@ index=main EventCode=4625 Source_Network_Address=192.168.10.20 | table _time, Ac
 
 ## Remediation and Prevention
 
-**Account lockout policy** — Configure Windows to lock an account after a set number of failed login attempts. This directly stops brute force attacks by making repeated guessing impractical.
+**Account lockout policy**: Configure Windows to lock an account after a set number of failed login attempts. This directly stops brute force attacks by making repeated guessing impractical.
 
-**Disable SMB where not needed** — If SMB file sharing is not required on a machine, disable it entirely to remove the attack surface.
+**Disable SMB where not needed**: If SMB file sharing is not required on a machine, disable it entirely to remove the attack surface.
 
-**Restrict SMB access** — Use firewall rules to limit which machines can reach port 445. Only machines that legitimately need SMB access should be allowed.
+**Restrict SMB access**: Use firewall rules to limit which machines can reach port 445. Only machines that legitimately need SMB access should be allowed.
 
-**Use strong passwords** — All accounts especially administrator should use long complex passwords that are not in common wordlists.
+**Use strong passwords**: All accounts especially administrator should use long complex passwords that are not in common wordlists.
 
-**Monitor Event ID 4625** — Create a Splunk alert that fires when more than 5 failed logins occur from the same source IP within 5 minutes. This gives the SOC team real time visibility of brute force activity.
+**Monitor Event ID 4625**: Create a Splunk alert that fires when more than 5 failed logins occur from the same source IP within 5 minutes. This gives the SOC team real time visibility of brute force activity.
 
-**Disable the built-in Administrator account** — Rename or disable the default Administrator account and create a separate admin account with a non-obvious name. This makes credential guessing significantly harder.
+**Disable the built-in Administrator account**: Rename or disable the default Administrator account and create a separate admin account with a non-obvious name. This makes credential guessing significantly harder.
