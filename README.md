@@ -12,7 +12,7 @@
 
 ## About Me
 
-My name is Adedeji Adetayo and I am an aspiring SOC analyst building practical detection and investigation skills through hands-on homelab work. My goal is to contribute meaningfully from day one in a SOC role.
+Aspiring SOC analyst building hands-on experience in threat detection, log analysis, and incident investigation through practical cybersecurity homelab projects.
 
 ---
 
