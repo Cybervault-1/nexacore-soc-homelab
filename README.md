@@ -13,26 +13,26 @@
 
 ## About Me
 
-My name is Adedeji Adetayo and I am an aspiring SOC analyst building hands-on experience by designing and operating a cybersecurity homelab from scratch. My goal is to develop practical detection and investigation skills that translate directly into a SOC role.
+My name is Adedeji Adetayo and I am an aspiring SOC analyst building practical detection and investigation skills through hands-on homelab work. My goal is to contribute meaningfully from day one in a SOC role.
 
 ---
 
 ## Lab Overview
 
-The NexaCore SOC Homelab is a fully functional security operations environment built on VirtualBox. It simulates a small enterprise network with a Domain Controller, a target endpoint, and an attacker machine. Splunk Enterprise serves as the central SIEM, collecting logs from all machines and providing real time visibility into attack activity.
+The NexaCore SOC Homelab is a fully functional security operations environment built on VirtualBox. It simulates a small enterprise network with a Domain Controller, a target Windows endpoint, and a Kali Linux attacker machine.
 
-The lab is designed around a complete SOC workflow: build the environment, simulate attacks, detect them in Splunk, investigate the evidence, and document findings in a structured incident report.
+Splunk Enterprise serves as the central SIEM, collecting logs from all machines and providing real time visibility into attack activity. The lab follows a complete SOC workflow: build the environment, simulate attacks, detect them in Splunk, investigate the evidence, and document findings in structured incident reports.
 
 ---
 
 ## Lab Architecture
 
-| Machine | Role | Host-Only IP | Internal Network IP |
-|---|---|---|---|
-| Host Laptop | Splunk SIEM | 192.168.56.1 | N/A |
-| NEXACORE-WS01 | Primary target endpoint | 192.168.56.30 | 192.168.10.10 |
-| NexaCore-DC01 | Domain Controller | 192.168.56.10 | 192.168.10.1 |
-| Kali Linux | Attacker machine | N/A | 192.168.10.20 |
+| Machine | Role | OS | RAM | Adapter 1 | Adapter 2 | Internal IP |
+|---|---|---|---|---|---|---|
+| Host Laptop | Splunk SIEM | Windows 10 | 4GB allocated | N/A | N/A | 192.168.56.1 |
+| NEXACORE-WS01 | Target Endpoint | Windows 10 | 3GB | Host-Only | Internal Network | 192.168.10.10 |
+| NexaCore-DC01 | Domain Controller | Windows Server 2019 | 4GB | Host-Only | Internal Network | 192.168.10.1 |
+| Kali Linux | Attacker | Kali Linux 2025 | 2GB | NAT | Internal Network | 192.168.10.20 |
 
 ---
 
@@ -55,6 +55,44 @@ The lab is designed around a complete SOC workflow: build the environment, simul
 - SIEM log ingestion and SPL querying
 - Incident investigation and reporting
 - Network segmentation and lab architecture design
+- Detection engineering and alert creation
+
+---
+
+## Detection Workflow
+
+Every attack simulation in this lab follows the same structured SOC workflow:
+
+```
+Attack Simulation
+        |
+        | Kali Linux executes attack against target endpoint
+        |
+        v
+Log Generation
+        |
+        | Sysmon and Windows Security logs capture activity
+        |
+        v
+Log Forwarding
+        |
+        | Splunk Universal Forwarder ships logs to Splunk (port 9997)
+        |
+        v
+Detection
+        |
+        | SPL queries identify suspicious patterns in Splunk
+        |
+        v
+Investigation
+        |
+        | Analyst examines event fields to build attack timeline
+        |
+        v
+Incident Report
+        |
+        | Findings documented with evidence, MITRE mapping and remediation
+```
 
 ---
 
