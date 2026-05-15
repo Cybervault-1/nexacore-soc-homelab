@@ -106,12 +106,11 @@ Incident Report
 | Incident Reports | Full IR reports for each simulated attack | [View](05-incident-reports/IR-001-smb-brute-force/README.md) |
 
 ---
-
 ## Attack and Detection Coverage
 
 | Attack Simulation | MITRE Technique | Detection Method | Status |
 |---|---|---|---|
-| [SMB Brute Force](./03-attack-simulations/sim-01-smb-bruteforce/README.md) | T1110.001 | Event ID 4625 via Splunk | Completed |
+| [SMB Brute Force](03-attack-simulations/sim-01-smb-brute-force/README.md) | T1110.001 — Password Guessing | Event ID 4625 via Splunk | Completed |
 ---
 
 ## Certifications
