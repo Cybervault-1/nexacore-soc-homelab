@@ -166,7 +166,7 @@ The Workstation_Name field shows KALI confirming the attacker machine name. Comb
 The complete detection table showing all five fields across all 8 events was generated using the following query:
 
 ```
-index=main EventCode=4625 Source_Network_Address=192.168.10.20 | table _time, Account_Name, Logon_Type, Failure_Reason, Source_Network_Address, Workstation_Name
+index=main EventCode=4625 Source_Network_Address=192.168.10.20 earliest=-15m | table _time, Account_Name, Logon_Type, Failure_Reason, Source_Network_Address, Workstation_Name
 ```
 
 ![Detection Table](screenshots/07-brute-force-detection-table.png)
