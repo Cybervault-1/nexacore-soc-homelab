@@ -21,7 +21,7 @@ That pattern is what this detection looks for. The moment multiple 4625 events a
 
 ## SPL Detection Query
 
-In a production SOC environment this query would be saved as a scheduled search running every 5 minutes, triggering an alert only when more than 5 failed logins are detected from the same source IP within that window.
+This query searches for failed login events on NEXACORE-WS01 in the last 15 minutes. In a production SOC environment this query would be saved as a scheduled search, running silently in the background every 5 minutes and only triggering an alert when more than 5 failed logins are detected from the same source IP within that window.
 
     index=main host=NEXACORE-WS01 EventCode=4625 earliest=-15m
 
