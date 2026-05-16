@@ -104,13 +104,16 @@ Incident Report
 | Attack Simulations | Simulated attacks with full evidence chain | [View](03-attack-simulations/sim-01-smb-brute-force/README.md) |
 | Detections | SPL queries and detection logic | [View](04-detections/detection-01-brute-force/README.md) |
 | Incident Reports | Full IR reports for each simulated attack | [View](05-incident-reports/IR-001-smb-brute-force/README.md) |
+| Dashboards | Splunk dashboards for real time threat monitoring | [View](06-dashboards/dashboard-01-brute-force-detection/README.md) |
 
 ---
+
 ## Attack and Detection Coverage
 
-| Attack Simulation | MITRE Technique | Detection Method | Status |
-|---|---|---|---|
-| [SMB Brute Force](03-attack-simulations/sim-01-smb-brute-force/README.md) | T1110.001 — Password Guessing | Event ID 4625 via Splunk | Completed |
+| Attack Simulation | MITRE Technique | Detection Method | Incident Report | Status |
+|---|---|---|---|---|
+| [SMB Brute Force](03-attack-simulations/sim-01-smb-brute-force/README.md) | T1110.001 — Password Guessing | Event ID 4625 via Splunk | [IR-001](05-incident-reports/IR-001-smb-brute-force/README.md) | Completed |
+
 ---
 
 ## Certifications
