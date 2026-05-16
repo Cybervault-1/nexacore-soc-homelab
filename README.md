@@ -24,6 +24,15 @@ Splunk Enterprise serves as the central SIEM, collecting logs from all machines 
 
 ---
 
+## Attack and Detection Coverage
+
+| Attack Simulation | MITRE Technique | Detection Writeup | Incident Report | Status |
+|---|---|---|---|---|
+| [SMB Brute Force](03-attack-simulations/sim-01-smb-brute-force/README.md) | T1110.001 — Password Guessing | [Detection-01](04-detections/detection-01-brute-force/README.md) | [IR-001](05-incident-reports/IR-001-smb-brute-force/README.md) | Completed |
+| [Nmap Reconnaissance](03-attack-simulations/sim-02-nmap-reconnaissance/README.md) | T1046 — Network Service Discovery | [Detection-02](04-detections/detection-02-nmap-reconnaissance/README.md) | [IR-002](05-incident-reports/IR-002-nmap-reconnaissance/README.md) | Completed |
+
+---
+
 ## Lab Architecture
 
 | Machine | Role | OS | RAM | Adapter 1 | Adapter 2 | Internal IP |
@@ -99,21 +108,13 @@ Incident Report
 
 | Section | Description | Link |
 |---|---|---|
-| Lab Architecture | Network design, VM roles and IP addressing | [View](01-lab-architecture/README.md) |
-| Infrastructure | Host specs, VM configuration, Sysmon and Splunk setup | [View](02-infrastructure/README.md) |
-| Attack Simulations | Simulated attacks with full evidence chain | [View](03-attack-simulations/sim-01-smb-brute-force/README.md) |
-| Detections | SPL queries and detection logic | [View](04-detections/detection-01-brute-force/README.md) |
-| Incident Reports | Full IR reports for each simulated attack | [View](05-incident-reports/IR-001-smb-brute-force/README.md) |
-| Dashboards | Splunk dashboards for real time threat monitoring | [View](06-dashboards/dashboard-01-brute-force-detection/README.md) |
+| Lab Architecture | Network design, VM roles and IP addressing | [View](01-lab-architecture/) |
+| Infrastructure | Host specs, VM configuration, Sysmon and Splunk setup | [View](02-infrastructure/) |
+| Attack Simulations | Simulated attacks with full evidence chain | [View](03-attack-simulations/) |
+| Detections | SPL queries and detection logic | [View](04-detections/) |
+| Incident Reports | Full IR reports for each simulated attack | [View](05-incident-reports/) |
+| Dashboards | Splunk dashboards for real time threat monitoring | [View](06-dashboards/) |
 
----
-
-## Attack and Detection Coverage
-
-| Attack Simulation | MITRE Technique | Detection Method | Incident Report | Status |
-|---|---|---|---|---|
-| [SMB Brute Force](03-attack-simulations/sim-01-smb-brute-force/README.md) | T1110.001 — Password Guessing | Event ID 4625 via Splunk | [IR-001](05-incident-reports/IR-001-smb-brute-force/README.md) | Completed |
-| [Nmap Reconnaissance](03-attack-simulations/sim-02-nmap-reconnaissance/README.md) | T1046 — Network Service Discovery | Event ID 5156 via Splunk | [IR-002](05-incident-reports/IR-002-nmap-reconnaissance/README.md) | Completed |
 ---
 
 ## Certifications
@@ -121,6 +122,8 @@ Incident Report
 | Certification | Issuer | Status |
 |---|---|---|
 | [Google Cybersecurity Professional Certificate](https://coursera.org/verify/professional-cert/6WSDVPZVYGEM) | Google via Coursera | Completed |
+
+---
 
 ## Contact
 
