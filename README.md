@@ -113,7 +113,7 @@ Incident Report
 | Attack Simulation | MITRE Technique | Detection Method | Incident Report | Status |
 |---|---|---|---|---|
 | [SMB Brute Force](03-attack-simulations/sim-01-smb-brute-force/README.md) | T1110.001 — Password Guessing | Event ID 4625 via Splunk | [IR-001](05-incident-reports/IR-001-smb-brute-force/README.md) | Completed |
-| [Nmap Reconnaissance](03-attack-simulations/sim-02-nmap-reconnaissance/README.md) | T1046 — Network Service Discovery | Event ID 5156 via Splunk | Completed |
+| [Nmap Reconnaissance](03-attack-simulations/sim-02-nmap-reconnaissance/README.md) | T1046 — Network Service Discovery | Event ID 5156 via Splunk | [IR-002](05-incident-reports/IR-002-nmap-reconnaissance/README.md) | Completed |
 ---
 
 ## Certifications
