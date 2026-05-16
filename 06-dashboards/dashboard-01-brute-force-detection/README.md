@@ -9,9 +9,9 @@ This dashboard monitors failed authentication activity across the NexaCore envir
 ### Panel 1 — Failed Logins Over Time (Event ID 4625)
 
 Displays failed login attempts grouped by hour across a 24-hour window. This panel is designed to surface attack patterns over time rather than individual events. A single failed login is noise. Multiple failed logins clustered within a short time window is a signal worth investigating.
-
+```
 **SPL Query:** index=main EventCode=4625 earliest=-1d@d latest=@d | timechart span=1h count
-
+```
 ### Panel 2 — Top Source IPs Generating Failed Logins
 
 Ranks source IP addresses by total failed login count. In a real SOC environment this panel would immediately surface an attacker IP attempting authentication against multiple accounts or the same account repeatedly. A single IP responsible for all failed logins is a strong indicator of brute force activity.
