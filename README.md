@@ -118,7 +118,16 @@ Incident Report
 
 ## Certifications
 
-- Google Cybersecurity Certificate
+| Certification | Issuer | Status | Date |
+|---|---|---|---|
+| [Google Cybersecurity Professional Certificate](https://coursera.org/verify/professional-cert/6WSDVPZVYGEM) | Google via Coursera |
+
+## Contact
+
+| Platform | Link |
+|---|---|
+| LinkedIn | [Adetayo Adedeji](https://www.linkedin.com/in/adetayo-adedeji-473816337/) |
+| Email | Adedejiadetayo33@gmail.com |
 
 ---
 
