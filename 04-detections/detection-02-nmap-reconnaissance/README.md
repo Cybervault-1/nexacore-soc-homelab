@@ -47,7 +47,7 @@ index=main EventCode=5156
 
 ## Evidence from Splunk
 
-Screenshot: `detection-02-nmap-splunk-results.png`
+![Splunk detection showing 37 Event ID 5156 entries from 192.168.10.20](../../03-attack-simulations/sim-02-nmap-reconnaissance/screenshots/03-nmap-recon-ports-summary.png)
 
 *The query results showing 192.168.10.20 hitting port 445 thirty-one times, confirming active port scanning behaviour.*
 
