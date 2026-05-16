@@ -57,7 +57,7 @@ The query surfaced 37 connection attempts from 192.168.10.20 across ports 445, 1
 
 ## Evidence
 
-Screenshot: `ir-002-nmap-splunk-detection.png`
+![Splunk showing 37 Event ID 5156 entries across ports 135, 139 and 445 from 192.168.10.20](../../03-attack-simulations/sim-02-nmap-reconnaissance/screenshots/01-nmap-recon-splunk-detection-5156.png)
 
 *Splunk results showing 37 Event ID 5156 entries from 192.168.10.20 against NEXACORE-WS01 across three ports.*
 
