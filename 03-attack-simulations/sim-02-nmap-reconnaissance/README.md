@@ -30,6 +30,8 @@ nmap -sV -p 1-1000 192.168.10.10
 
 The `-sV` flag instructs Nmap to probe each open port and identify the exact service and version running on it. The `-p 1-1000` flag limits the scan to the first 1000 ports.
 
+![Nmap Scan Results](screenshots/00-nmap-recon-scan-results.png)
+
 ## Scan Results
 
 Nmap discovered three open ports on NEXACORE-WS01:
@@ -52,30 +54,26 @@ auditpol /set /subcategory:"Filtering Platform Connection" /success:enable /fail
 
 This writes Event ID 5156 to the Windows Security event log every time the firewall permits an inbound connection. The Splunk Universal Forwarder then ships these events to Splunk for detection.
 
-## Splunk Detection Query
+![Audit Policy Enabled](screenshots/02-nmap-recon-auditpol-enabled.png)
+
+## Splunk Detection
+
+The following query was used to surface the reconnaissance activity in Splunk:
 
 ```spl
 index=main EventCode=5156 src_ip=192.168.10.20 | table _time, src_ip, dest_ip, dest_port, Direction | sort dest_port
 ```
 
-## Evidence
-
-Splunk captured 37 Event ID 5156 entries from Kali's IP address during the scan window. Port 445 received 31 connection attempts, port 135 received 3, and port 139 received 3. The repeated probing of the same ports from a single source IP within seconds is the detection fingerprint of an Nmap service version scan.
-
-## Screenshots
-
-**Nmap scan output from Kali:**
-
-![Nmap Scan Results](screenshots/00-nmap-recon-scan-results.png)
-
-**Splunk detection showing inbound connections from Kali:**
+Splunk captured 37 Event ID 5156 entries from Kali's IP address during the scan window. The repeated probing of the same ports from a single source IP within seconds is the detection fingerprint of an Nmap service version scan.
 
 ![Splunk Detection](screenshots/01-nmap-recon-splunk-detection-5156.png)
 
-**Audit policy confirming Event ID 5156 logging enabled:**
+## Port Hit Summary
 
-![Audit Policy](screenshots/02-nmap-recon-auditpol-enabled.png)
+Port 445 received 31 connection attempts, port 135 received 3, and port 139 received 3. The concentration of probes on port 445 reflects Nmap's service version detection sending multiple packets to fingerprint the SMB service.
 
-**Port hit summary showing reconnaissance fingerprint:**
+```spl
+index=main EventCode=5156 src_ip=192.168.10.20 | stats count by dest_port | sort dest_port
+```
 
 ![Port Summary](screenshots/03-nmap-recon-ports-summary.png)
