@@ -59,7 +59,7 @@ Reconnaissance is the step that happens before an attack. An adversary who has s
 
 For Event ID 5156 to be captured, the following audit policy must be enabled on the target machine:
 
-**Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy > System > Audit Filtering Platform Connection — set to Success**
+**Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy > System > Audit Filtering Platform Connection set to Success**
 
 Without this policy, the events will not appear in the Windows Security log and the detection will not work.
 
