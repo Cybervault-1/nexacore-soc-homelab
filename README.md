@@ -119,7 +119,7 @@ Incident Report
 ## Certifications
 
 | Certification | Issuer | Status |
-|---|---|---|---|
+|---|---|---|
 | [Google Cybersecurity Professional Certificate](https://coursera.org/verify/professional-cert/6WSDVPZVYGEM) | Google via Coursera | Completed |
 
 ## Contact
